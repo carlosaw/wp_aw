@@ -1,0 +1,15 @@
+@media print {
+  header,
+  .sidebar,
+  .paginacao,
+  .comments_area,
+  footer,
+  .post_content img,
+  .wp-block-embed iframe {
+    display: none;
+  }
+  .post_content {
+    margin-top: 30px;
+  }
+  
+}

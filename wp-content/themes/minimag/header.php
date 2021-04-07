@@ -1,6 +1,7 @@
-<html>
+<html <?php language_attributes(); ?>>
 
 <head>
+  <meta charset="<?php bloginfo('charset'); ?>" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <?php wp_head(); ?>
 </head>
@@ -70,31 +71,44 @@
             
             </div>
           </div>
-
+          
+          <?php if(is_home() || is_search()): ?>
           <div class="main_info">
             <div class="row">
               <div class="col-sm-8 randompost">
-                <strong>Você já viu?</strong>
+                <strong><?php echo __('Did you see?', 'minimag') ?></strong>
                 <?php
-                $am_query = new WP_Query(array(
-                  'posts_per_page' => 1,
-                  'post_type' => 'post',
-                  'orderby' => 'rand'
-                ));
-                if ($am_query->have_posts()) {
-                  while ($am_query->have_posts()) {
-                    $am_query->the_post();
-                ?>
-                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                <?php
+
+                if(function_exists('wpp_get_mostpopular')) {
+
+                  wpp_get_mostpopular(array(
+                    'limit' => 1,
+                    'wpp_start' => '',
+                    'wpp_end' => '',
+                    'post_html' => '<a href="{url}">{text_title}</a>'
+                  ));
+
+                } else {
+                  $am_query = new WP_Query(array(
+                    'posts_per_page' => 1,
+                    'post_type' => 'post',
+                    'orderby' => 'rand'
+                  ));
+                  if ($am_query->have_posts()) {
+                    while ($am_query->have_posts()) {
+                      $am_query->the_post();
+                  ?>
+                      <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                  <?php
+                    }
+                    wp_reset_postdata();
                   }
-                  wp_reset_postdata();
                 }
                 ?>
               </div>
               <div class="col-sm-4 socialarea">
                 <div class="socialtxt">
-                  SIGA:
+                  <?php echo __('FOLLOW:', 'minimag'); ?>
                 </div>
                 <div class="socialicons">
 
@@ -132,9 +146,15 @@
               </div>
             </div>
           </div>
+          <?php endif; ?>
         </div>
-
       </div>
     </div>
   
+  <?php if(get_header_image()): ?>
+    <div class="container custom-header">
+      <img src="<?php header_image(); ?>" />
+    </div>
+  <?php endif; ?>
+
   </header>

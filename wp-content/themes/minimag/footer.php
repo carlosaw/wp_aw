@@ -10,9 +10,8 @@
   </div>
   <div class="mainfooter">
     <div class="mainfooter_left">
-      Todos os direitos reservados. -
       <?php if(get_theme_mod('am_privacy_url')): ?>
-        <a href="<?php the_permalink( get_theme_mod('am_privacy_url') ); ?>">Política de Privacidade</a>
+        <a href="<?php the_permalink( get_theme_mod('am_privacy_url') ); ?>">@Política de Privacidade</a>
       <?php endif; ?>
     </div>
     <div class="mainfooter_right">
@@ -23,6 +22,12 @@
     </div>
   </div>
 </footer>
+
+<!--Paginação com ajax-->
+<script type="text/javascript">
+  var ajaxUrl = "<?php echo admin_url('admin-ajax.php'); ?>";
+</script>
+
 <?php wp_footer(); ?>
 </body>
 </html>

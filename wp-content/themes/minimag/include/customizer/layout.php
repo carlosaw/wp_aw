@@ -51,7 +51,7 @@ function am_layout_customizer( $wp_customize ) {
         'label'=>'Página de Política de Privacidade',
         'section'=>'am_layout_section',
         'settings'=>'am_privacy_url',
-        'type'=>'dropdown-pages', // text, checkbox, textarea, select, radio, dropdown-pages        
+        'type'=>'dropdown-pages'// text, checkbox, textarea, select, radio, dropdown-pages        
       )
     )
   );

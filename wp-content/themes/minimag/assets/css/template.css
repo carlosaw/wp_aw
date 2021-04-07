@@ -83,8 +83,8 @@ body {
 .socialarea {
   background-color: #3382b5;
   height: 101%;
-  margin-top: -8px;
   color: #c2dae9;
+  margin-top: -8px;
 }
 .main_info .row {
   margin: 0;
@@ -154,7 +154,7 @@ footer {
   flex: 1;
 }
 .row {
-  margin-left: 180;
+  margin-left: 18;
   margin-right: 0;
 }
 .footer_widgets .widget {
@@ -200,8 +200,7 @@ footer {
 }
 .post_item {
   margin: 10px;
-  height: 450px;
-  border-bottom: 1px solid #CCC;
+  height: 440px;
 }
 .post_comment_area {
   background-color: #77b05a;
@@ -237,21 +236,29 @@ footer {
 }
 .post_video iframe {
   width: 100%;
-  height: 230px;
+  height: 200px;
   margin-top: -22px;
+}
+.post_audio iframe {
+  width: 100%;
+  height: 200px;
+  margin-top: -22px;
+}
+.wp-block-embed iframe {
+  width: 100%;
+  height: 393px;
 }
 .post_excerpt {
   color:#969596;
   line-height: normal;
 }
+
 .paginacao2 {
-  display: none;
-}
-.paginacao3 {
   display: none;
 }
 .paginacao {
   padding: 10px;
+  clear: both;
 }
 .pagina_anterior {
   float: left;
@@ -290,12 +297,14 @@ footer {
 
 .post_content {
   padding-bottom: 30px;
-  border-bottom: 1px solid #CCC;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 .post_title_single {
   margin-top: 20px;
   margin-bottom: 10px;
   font-size: 25px;
+  padding-left: 15px;
 }
 .post_content img {
   max-width: 100%;
@@ -303,7 +312,6 @@ footer {
 }
 
 .comments_area {
-  border-top: 1px solid #CCC;
   padding: 10px;
 }
 .comment-reply-title {
@@ -323,74 +331,136 @@ textarea {
   height: 100px;
   font-size: 16px;
 }
+.custom-header img {
+  width: 100%;
+}
+
+article.sticky {
+  width: 100%;
+}
+article.sticky .post_item {
+  height: auto;
+}
+.loadmoreButton {
+  width: 150px;
+  height: 40px;
+  background-color: #3382b5;
+  text-align: center;
+  color: #FFF;
+  line-height: 40px;
+  margin: auto;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
 
 
 /* Tablet Horizontal */
 @media (min-width:768px) and (max-width:1024px) {
+  .sidebar .widget .tagcloud {
+    padding-bottom: 20px;
+    flex-wrap: nowrap;
+  }
+  .post_item {
+    height: 450px;
+  }
   .tag-link-position-1 {
-    font-size: 19px !important;
+    font-size: 9pt !important;
   }
   .tag-link-position-2 {
-    font-size: 15px !important;
+    font-size: 9pt !important;
   }
   textarea {
     width: 100%;
     height: 100px;
     font-size: 16px;
   }
-  .paginacao {
-    padding: 10px;
+  .wpcf7-textarea {
+    width: 97% !important;
   }
-
-  .paginacao {
-    padding: 10px;
+  .pag {
+    margin-bottom: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    clear: both;
   }
-  .pagina_anterior {
-    margin-bottom: 10px;
+  .paginacao {
+    display: none;
+  }
+  
+  .paginacao2 {    
+    display: block;
+    border-top: 1px solid #CCC;
+    border-bottom: 1px solid #CCC;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+  .pagina_anterior2 {
     float: left;
     background-color: #0085a1;
     display: flex;
     border-radius: 5px;
   }
-  .pagina_anterior:hover {
-    background-color: #00657b;
+  .pagina_anterior2:hover {
+    background-color: #d0d7d8;
   }
-  .pagina_anterior a {
+  .pagina_anterior2 a {
+    padding: 10px;
     align-items: center;
     text-decoration: none;
     color: #fff;
-    margin: 5px;
-    font-size: 12px;
+    font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
   }
-  .pagina_proxima {
-    margin-bottom: 10px;
+  .pagina_proxima2 {
     float: right;
     background-color: #0085a1;
     display: flex;
     border-radius: 5px;
   }
-  .pagina_proxima:hover {
+  .pagina_proxima2:hover {
     background-color: #00657b;
   }
-  .pagina_proxima a {
+  .pagina_proxima2 a {
+    padding: 10px;
     align-items: center;
     text-decoration: none;
     color: #fff;
-    margin: 5px;
-    font-size: 12px;
+    font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
   }
-
   .post_content {
     padding-bottom: 30px;
-    border-bottom: 1px solid #CCC;
     margin-bottom: 0px;
   }
   .comments_area {
     margin-top: 0px;
   }
+  .wp-block-embed iframe {
+    width: 100%;
+    height: 320px !important;
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Tablet Vertical */
 @media (min-width:481px) and (max-width:768px) {
   .row {
@@ -406,12 +476,7 @@ textarea {
     margin: 0px;
     padding-top: 15px;
   }
-  .tag-link-position-1 {
-    font-size: 12px !important;
-  }
-  .tag-link-position-2 {
-    font-size: 12px !important;
-  }
+
   
   .mainfooter_left {
     float: left;
@@ -426,12 +491,9 @@ textarea {
 
   .paginacao {
     padding: 1px;
+    clear: both;
   }
   
-  .paginacao {
-    padding: 10px;
-    display: contents;
-  }
   .pagina_anterior {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -470,7 +532,12 @@ textarea {
     font-size: 12px;
     font-family: Arial, Helvetica, sans-serif;
   }
-  
+  .post_video iframe {
+    height: 300px;
+  }
+  .post_audio iframe {
+    height: 300px;
+  }
 }
 
 
@@ -494,7 +561,15 @@ textarea {
   .search_area {
     display: none;
   }
- 
+  .post_data {
+    margin-top: -15px !important;
+  }
+  .post_video {
+    margin-bottom: 20px;
+  }
+  .post_audio {
+    margin-bottom: 20px;
+  }
   .main_nav {
     height: auto;
   }
@@ -516,6 +591,10 @@ textarea {
   .sidebar {
     padding-top: 1px;
   }
+  .sidebar {
+    margin-top: 15px;
+    background-color: #EEEEEE;
+  }
   .tag-link-position-1 {
     font-size: 15px !important;
   }
@@ -525,8 +604,9 @@ textarea {
   }
   
   .paginacao2 {
-    padding: 10px;
-    display: contents;
+    display: block;
+    border-bottom: 1px solid #CCC;
+    border-top: 1px solid #CCC;
   }
   .pagina_anterior2 {
     margin-top: 10px;
@@ -544,7 +624,7 @@ textarea {
     text-decoration: none;
     color: #fff;
     margin: 5px;
-    font-size: 12px;
+    font-size: 10px;
     font-family: Arial, Helvetica, sans-serif;
   }
   .pagina_proxima2 {
@@ -563,7 +643,7 @@ textarea {
     text-decoration: none;
     color: #fff;
     margin: 5px;
-    font-size: 12px;
+    font-size: 10px;
     font-family: Arial, Helvetica, sans-serif;
   }
 
@@ -575,7 +655,9 @@ textarea {
     background-color: #b53c33;
     width: 50%;
   }
-
+  .footer_widgets {
+    margin-top: -40px;
+  }
   .mainfooter {
     height: 55px;
     background-color: #2d3034;
@@ -586,7 +668,7 @@ textarea {
     width: 50%;
     line-height: 84px;
     margin-left: 0px;
-    font-size: 12px;
+    font-size: 10px;
     text-align: center;
   }
   .mainfooter_right {
@@ -603,11 +685,17 @@ textarea {
     width: 100%;
   }
   .post_data {
-    margin-top: -20px;
+    margin-top: -15px;
   }
+  
   .maincontent h1 {
     font-size: 18px;
     margin-top: 15px;
     margin-bottom: -5px;
   }
+  .wp-block-embed iframe {
+    width: 100%;
+    height: 160px !important;
+  }
+
 }
