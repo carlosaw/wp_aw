@@ -18,3 +18,21 @@ function ar_receitas_metaboxes() {
     'high' // high, default, low
   );
 }
+
+function ar_save_post_admin($post_id, $post, $update) {
+
+  if(!$update) {
+    return;
+  }
+
+  $receita_data = array(
+    'ingredientes' => $_POST['ar_ingredientes'],
+    'tempo' => $_POST['ar_tempo'],
+    'utensilios' => $_POST['ar_utensilios'],
+    'dificuldade' => $_POST['ar_dificuldade'],
+    'tipo' => $_POST['ar_tipo']
+  );
+
+  update_post_meta($post_id, 'receita_data', $receita_data);
+  
+}
