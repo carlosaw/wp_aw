@@ -5,6 +5,12 @@ function ar_voto_receita() {
   $array = array(
     'status' => 0
   );
+  // Verifica se está logado para votar
+  $receita_opts = get_option('ar_receita_opts');
+  if(!is_user_logged_in() && $receita_opts['voto_login'] == 2) {
+    wp_send_json($array);
+    exit;
+  }
 
   // Receber dados que foram enviados
   $post_id = absint($_POST['id']);

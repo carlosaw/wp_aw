@@ -32,6 +32,8 @@ function ar_enqueue_scripts() {
     'home_url' => home_url('/')
   ));
 
+  wp_enqueue_media();
+
   wp_enqueue_style('ar_style');
   wp_enqueue_style('ar_rateit');
   wp_enqueue_script('ar_rateit');

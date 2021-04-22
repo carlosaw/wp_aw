@@ -24,6 +24,11 @@
   Tipo de receita:<br/>
   <input type="text" name="tipo" id="receitas_tipo" /><br/><br/>
 
+  Imagem da Receita:<br/>
+  <a href="#" id="receitas_img_upload_btn">Envie uma imagem</a><br/>
+  <img id="receitas_img_preview" />
+  <input type="hidden" id="receitas_img" /><br/><br/>
+
   <input type="submit" value="Salvar" id="receitas_criador_submit"/>
   
 </form>

@@ -1,5 +1,24 @@
 jQuery(function(){
 
+  var mediauploader = wp.media({
+    title:'Selecione ou envie uma Foto',
+    button:{
+      text:'Usar esta foto'
+    },
+    multiple:false
+  });
+  jQuery('#receitas_img_upload_btn').on('click', function(e){
+    e.preventDefault();
+
+    mediauploader.open();
+  });
+
+  mediauploader.on('select', function(){
+    var anexo = mediauploader.state().get('selection').first().toJSON();
+    jQuery('#receitas_img_preview').attr('src', anexo.url);
+    jQuery('#receitas_img').val(anexo.id);
+  });
+
   jQuery('#receita_voto').bind('rated', function(){
 
     jQuery(this).rateit('readonly', true);
@@ -35,6 +54,7 @@ jQuery(function(){
       utensilios:jQuery('#receitas_utensilios').val(),
       dificuldade:jQuery('#receitas_dificuldade').val(),
       tipo:jQuery('#receitas_tipo').val(),
+      anexo_id:jQuery('#receitas_img').val()
     };
 
     jQuery.ajax({

@@ -9,7 +9,7 @@ function ar_receita_opts_page() {
     <?php if(isset($_GET['status']) && $_GET['status'] == '1'): ?>
       <h4 style="color:#0000FF">Opções salvas com sucesso!</h4>
     <?php endif; ?>
-
+    <h1>Feito estilo meu</h1>
     <form method="POST" action="admin-post.php">
       <input type="hidden" name="action" value="ar_receita_opts_save" />
       <?php wp_nonce_field('ar_receita_opts_verify'); ?>
@@ -29,6 +29,19 @@ function ar_receita_opts_page() {
       <input type="submit" value="Salvar" />      
     </form>
 
+    <!--
+    <hr/>
+    <h1>Feito estilo wordpress</h1>
+    <form method="POST" action="options.php">
+
+      <?php
+      settings_fields('ar_opts_group');// Mostra dados inicias
+      do_settings_sections('ar_opts_section');// Mostra os campos
+      submit_button();
+      ?>
+    
+    </form>
+    -->
   </div>
   <?php
 

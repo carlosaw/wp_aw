@@ -1,6 +1,13 @@
 <?php
 function ar_receitas_submit() {
   $array = array('status' => 1);
+
+  $receita_opts = get_option('ar_receita_opts');
+
+  if(!is_user_logged_in() && $receita_opts['receita_login'] == 2) {
+    wp_send_json($array);
+    exit;
+  }
     
   if(empty($_POST['ingredientes']) ||
     empty('tempo') ||
@@ -32,6 +39,11 @@ function ar_receitas_submit() {
     'post_type' => 'receita'
   ));
   
+  if(!empty($_POST['anexo_id'])) {
+    include_once(ABSPATH.'/wp-admin/includes/image.php');
+    set_post_thumbnail($post_id, $_POST['anexo_id']);
+  }
+
   update_post_meta($post_id, 'receita_data', $receita_data);
 
   $array['status'] = 2;

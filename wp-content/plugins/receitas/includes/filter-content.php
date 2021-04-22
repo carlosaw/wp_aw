@@ -28,6 +28,13 @@ function ar_filter_receita_content( $content ) {
       break;
   }
 
+  $receita_opts = get_option('ar_receita_opts');
+  if(!is_user_logged_in() && $receita_opts['voto_login'] == 1) {
+    $receita_html = str_replace('RECEITA_READONLY_PH', 'true', $receita_html);
+  } else {
+    $receita_html = str_replace('RECEITA_READONLY_PH', 'false', $receita_html);
+  }
+
   $receita_html = str_replace('INGREDIENTES_PH', $receita_data['ingredientes'],     $receita_html);
   $receita_html = str_replace('TEMPO_PH', $receita_data['tempo'], $receita_html);
   $receita_html = str_replace('UTENSILIOS_PH', $receita_data['utensilios'], $receita_html);
