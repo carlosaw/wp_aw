@@ -7,7 +7,13 @@ function ar_filter_receita_content( $content ) {
 
   global $post;
 
-  $receita_html = file_get_contents('receita-template.php', true);
+  $receita_html = wp_remote_get(
+    plugins_url('includes/receita-template.php', RECEITA_PLUGIN_URL)
+  );
+  $receita_html = wp_remote_retrieve_body( $receita_html );
+
+  //$receita_html = file_get_contents('receita-template.php', true);
+  
   $receita_data = get_post_meta($post->ID, 'receita_data', true);
 
   switch($receita_data['dificuldade']) {
@@ -27,6 +33,9 @@ function ar_filter_receita_content( $content ) {
   $receita_html = str_replace('UTENSILIOS_PH', $receita_data['utensilios'], $receita_html);
   $receita_html = str_replace('DIFICULDADE_PH', $receita_data['dificuldade'], $receita_html);
   $receita_html = str_replace('TIPO_PH', $receita_data['tipo'], $receita_html);
+  $receita_html = str_replace('RECEITA_ID_PH', $post->ID, $receita_html);
+  $receita_html = str_replace('NOTA_PH', number_format($receita_data['media'], 1), $receita_html);
+  $receita_html = str_replace('QT_PH', $receita_data['contagem'], $receita_html);
 
   return $receita_html.$content;
 }

@@ -1,0 +1,14 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.ar_receitas_loginarea {
+  display: flex;
+  padding: 10px;
+}
+.ar_receitas_loginitem {
+  flex: 1;
+  margin: 10px;
+}
+.ar_hide_form {
+  display: none;
+}
