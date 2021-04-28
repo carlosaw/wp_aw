@@ -20,7 +20,6 @@ function ar_filter_receita_content( $content ) {
     $t_url = get_term_meta( $origem[0]->term_id, 'url', true );
   }
 
- 
   $receita_data = get_post_meta($post->ID, 'receita_data', true);
 
   switch($receita_data['dificuldade']) {

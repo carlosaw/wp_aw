@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Contact Form 7 - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-11-09 20:49:35+0000\n"
+"PO-Revision-Date: 2021-04-26 16:55:24+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -196,6 +196,10 @@ msgstr "Chave da API"
 msgid "Setup Integration"
 msgstr "Definir integração"
 
+#: modules/constant-contact.php:490
+msgid "Constant Contact integration"
+msgstr "Integraçã do Constant Contact"
+
 #: modules/constant-contact.php:486
 msgid "https://contactform7.com/constant-contact-integration/"
 msgstr "https://contactform7.com/constant-contact-integration/"
@@ -207,6 +211,10 @@ msgstr "O módulo de integração do Constant Contact permite que você envie da
 #: modules/constant-contact.php:236
 msgid "Constant Contact"
 msgstr "Constant Contact"
+
+#: modules/constant-contact.php:9
+msgid "Email marketing"
+msgstr "E-mail marketing"
 
 #: includes/config-validator.php:649
 msgid "It is not allowed to use files outside the wp-content directory."
@@ -1153,6 +1161,18 @@ msgstr "De: %s"
 #: modules/submit.php:26
 msgid "Send"
 msgstr "Enviar"
+
+#: includes/contact-form-template.php:41
+msgid "Your message"
+msgstr "Sua mensagem"
+
+#: includes/contact-form-template.php:39
+msgid "Your email"
+msgstr "Seu e-mail"
+
+#: includes/contact-form-template.php:38
+msgid "Your name"
+msgstr "Seu nome"
 
 #. translators: %s: title of form-tag like 'email' or 'checkboxes'
 #: admin/includes/tag-generator.php:46
