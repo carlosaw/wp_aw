@@ -1,6 +1,7 @@
 <?php
 function ar_receitas_criador_shortcode() {
   $receita_opts = get_option('ar_receita_opts');
+  
   if(!is_user_logged_in() && $receita_opts['receita_login'] == 1) {
     return 'Você precisa estar logado para criar receitas!';
   }

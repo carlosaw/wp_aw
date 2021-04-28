@@ -29,19 +29,20 @@ function ar_receita_opts_page() {
       <input type="submit" value="Salvar" />      
     </form>
 
-    <!--
+  <!--  
     <hr/>
+
     <h1>Feito estilo wordpress</h1>
     <form method="POST" action="options.php">
 
       <?php
       settings_fields('ar_opts_group');// Mostra dados inicias
-      do_settings_sections('ar_opts_section');// Mostra os campos
-      submit_button();
+      do_settings_sections('ar_opts_section');// Cria a section
+      submit_button();// Botão de enviar
       ?>
     
     </form>
-    -->
+  -->  
   </div>
   <?php
 

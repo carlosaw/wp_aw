@@ -39,9 +39,10 @@ function ar_receitas_submit() {
     'post_type' => 'receita'
   ));
   
+  // Se enviou uma imagem ao criar receita
   if(!empty($_POST['anexo_id'])) {
     include_once(ABSPATH.'/wp-admin/includes/image.php');
-    set_post_thumbnail($post_id, $_POST['anexo_id']);
+    set_post_thumbnail($post_id, $_POST['anexo_id']);// Seta a miniatura do post
   }
 
   update_post_meta($post_id, 'receita_data', $receita_data);

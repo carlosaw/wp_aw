@@ -37,6 +37,8 @@ include('includes/receita-login-submit.php');
 include('includes/admin/dashboard-widgets.php');
 include('includes/admin/menus.php');
 include('includes/admin/receita_opts_page.php');
+include('includes/admin/origem_fields.php');
+include('includes/admin/origem_save.php');
 
 // Hooks
 register_activation_hook(RECEITA_PLUGIN_URL, 'ar_activate_plugin');
@@ -46,11 +48,14 @@ add_action('admin_init', 'ar_receitas_admin_init');
 add_action('save_post_receita', 'ar_save_post_admin', 10, 3);
 add_filter('the_content', 'ar_filter_receita_content');
 add_action('wp_enqueue_scripts', 'ar_enqueue_scripts', 100);
-
 add_action('widgets_init', 'ar_widgets_init');
 add_action('ar_receita_diaria_hook', 'ar_gerar_receita_diaria');
 add_action('wp_dashboard_setup', 'ar_add_dashboard_widgets');
 add_action('admin_menu', 'ar_admin_menus');
+add_action('origem_add_form_fields', 'ar_origem_add_form_fields');
+add_action('origem_edit_form_fields', 'ar_origem_edit_form_fields');
+add_action('created_origem', 'ar_save_origem');
+add_action('edited_origem', 'ar_save_origem');
 
 // Ajax
 add_action('wp_ajax_ar_voto_receita', 'ar_voto_receita');

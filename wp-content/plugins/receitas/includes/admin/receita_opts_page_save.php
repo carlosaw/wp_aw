@@ -1,6 +1,6 @@
 <?php
 function ar_receita_opts_save() {
-  // Verifica se o usuário tem permissão
+
   if( !current_user_can('edit_theme_options') ) {
     wp_die('Acesso Negado!');
   }

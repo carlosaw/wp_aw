@@ -5,7 +5,7 @@ Tags: popular, posts, widget, popularity, top
 Requires at least: 4.9
 Tested up to: 5.7.1
 Requires PHP: 5.4
-Stable tag: 5.3.0
+Stable tag: 5.3.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -35,6 +35,12 @@ WordPress Popular Posts is a highly customizable widget that displays your most 
 * **Template tags** - Don't feel like using widgets? No problem! You can still embed your most popular entries on your theme using the `wpp_get_mostpopular()` template tag. Additionally, the `wpp_get_views()` template tag allows you to retrieve the views count for a particular post. For usage and instructions, please refer to the [Installation section](https://wordpress.org/plugins/wordpress-popular-posts/#installation).
 * **Localization** - [Translate WPP into your own language](https://github.com/cabrerahector/wordpress-popular-posts/wiki/5.-FAQ#i-want-to-translate-your-plugin-into-my-language--help-you-update-a-translation-what-do-i-need-to-do).
 * **[WP-PostRatings](https://wordpress.org/plugins/wp-postratings/) support** - Show your visitors how your readers are rating your posts!
+
+= Support the Project! =
+
+If you'd like to support my work and efforts to creating and maintaining more open source projects your donations and messages of support mean a lot!
+
+[Buy me a coffee](https://ko-fi.com/cabrerahector) | [PayPal Me](https://paypal.me/cabrerahector)
 
 **WordPress Popular Posts** is now also on [GitHub](https://github.com/cabrerahector/wordpress-popular-posts)!
 
@@ -90,6 +96,19 @@ The FAQ section has been moved [here](https://github.com/cabrerahector/wordpress
 4. Statistics panel.
 
 == Changelog ==
+
+= 5.3.2 =
+
+- `wpp_get_views()`: fixed an issue where the function would return 0 views under certain conditions (thanks to everyone who helped with this!)
+
+[Release notes](https://cabrerahector.com/wordpress/wordpress-popular-posts-5-3-improved-php-8-support-retina-display-support-and-more/#minor-updates-and-hotfixes)
+
+= 5.3.1 =
+
+- `wpp_get_views()`: restores previous behavior where when no time range was set the function would return total views count (thanks @narolles!)
+- The WPP widget will now be loaded via AJAX by default (this affects new installs only.)
+
+[Release notes](https://cabrerahector.com/wordpress/wordpress-popular-posts-5-3-improved-php-8-support-retina-display-support-and-more/#minor-updates-and-hotfixes)
 
 = 5.3.0 =
 
@@ -204,5 +223,5 @@ The FAQ section has been moved [here](https://github.com/cabrerahector/wordpress
 * Flame graphic by freevector/Vecteezy.com.
 
 == Upgrade Notice ==
-= 4.1.2 =
+= 5.3.1 =
 If you're using a caching plugin, flushing its cache after upgrading to this version is recommended.

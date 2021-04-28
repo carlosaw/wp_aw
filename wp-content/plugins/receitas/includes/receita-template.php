@@ -5,6 +5,7 @@
   <li>Utensílios: UTENSILIOS</li>
   <li>Nível de dificuldade: DIFICULDADE_PH</li>
   <li>Tipo da Receita: TIPO_PH</li>
+  <li>Origem da Receita: ORIGEM_PH</li>
   <li>Nota da Receita: NOTA_PH  (QT_PH votos)</li>
 </ul>
 

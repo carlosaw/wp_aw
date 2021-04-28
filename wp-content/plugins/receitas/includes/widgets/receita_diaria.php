@@ -44,15 +44,16 @@ class Ar_receita_Do_Dia_Widget extends WP_Widget {
     echo $after_title;
 
     $receita_id = get_transient('ar_receita_diaria');
-    
     ?>
-      <a href="<?php echo get_the_permalink($receita_id); ?>">
 
-        <?php echo get_the_post_thumbnail($receita_id); ?><br/>
+    <a href="<?php echo get_the_permalink($receita_id); ?>">
 
-        <?php echo get_the_title($receita_id); ?>
+      <?php echo get_the_post_thumbnail($receita_id); ?><br/>
 
-      </a>
+      <?php echo get_the_title($receita_id); ?>
+
+    </a>
+
     <?php
 
     echo $after_widget;

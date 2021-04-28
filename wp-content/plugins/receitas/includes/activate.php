@@ -22,13 +22,12 @@ function ar_activate_plugin() {
   require_once(ABSPATH.'/wp-admin/includes/upgrade.php');
   dbDelta( $sql );
 
-  // hourly, daily, twicedaily -ativa o hook
+  // hourly, daily, twicedaily
   wp_schedule_event(time(), 'daily', 'ar_receita_diaria_hook');
 
-
-  // Pega opções que estão gravadas em options
+  // Options
   $receitas_opts = get_option('ar_receita_opts');
-    // Adiciona array no options se não tiver
+
   if(!$receitas_opts) {
     $opts = array(
       'voto_login' => 1,
@@ -37,4 +36,14 @@ function ar_activate_plugin() {
     add_option('ar_receita_opts', $opts);
   }
 
+  global $wp_roles;
+  add_role(
+    'receita_autor',
+    'Autor da Receita',
+    array(
+      'read' => true,
+      'upload_files' => true,
+      'edit_posts' => true
+    )
+  );
 }

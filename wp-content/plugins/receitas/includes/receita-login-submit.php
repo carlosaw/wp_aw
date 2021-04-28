@@ -22,7 +22,7 @@ function ar_receita_login() {
     'remember' => true
   ));
 
-  if(is_wp_error('$user')) {
+  if(is_wp_error($user)) {
     wp_send_json($array);
   }
 

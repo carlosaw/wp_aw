@@ -25,4 +25,5 @@ function ar_manage_receita_columns($column, $post_id) {
       echo number_format($receita_data['media'], 1);
       break;
   }
+  
 }

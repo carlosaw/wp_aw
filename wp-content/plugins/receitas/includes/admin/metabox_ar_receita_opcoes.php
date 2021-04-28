@@ -1,7 +1,9 @@
 <?php
 function ar_receita_opcoes($post) {
+  // Pega os dados do input Opções da receita
   $receita_data = get_post_meta($post->ID, 'receita_data', true);
 
+    // Limpa os erros dos inputs e zera eles
   if(empty($receita_data)) {
     $receita_data = array(
       'ingredientes' => '',

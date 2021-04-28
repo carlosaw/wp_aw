@@ -29,7 +29,7 @@
   <img id="receitas_img_preview" />
   <input type="hidden" id="receitas_img" /><br/><br/>
 
-  <input type="submit" value="Salvar" id="receitas_criador_submit"/>
+  <input type="submit" value="Salvar" id="receitas_criador_submit" />
   
 </form>
 <div id="receitas_criador_avisos"></div>

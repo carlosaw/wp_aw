@@ -33,4 +33,14 @@ function ar_receitas_init() {
     'supports' => array('title', 'editor', 'author', 'thumbnail', 'comments')
   );
   register_post_type('receita', $array);
+
+  // Registra a taxonomia
+  register_taxonomy(
+    'origem',
+    'receita',
+    array(
+      'label' => 'Origem',
+      'rewrite' => array('slug' => 'origem')
+    )
+  );
 }

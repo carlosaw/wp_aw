@@ -1,18 +1,20 @@
 jQuery(function(){
-
+ // Enviar foto ao criar receita
   var mediauploader = wp.media({
     title:'Selecione ou envie uma Foto',
     button:{
       text:'Usar esta foto'
     },
-    multiple:false
+    multiple:false // Só uma foto
   });
+  // Ao clicar no botão enviar imagem
   jQuery('#receitas_img_upload_btn').on('click', function(e){
     e.preventDefault();
 
-    mediauploader.open();
+    mediauploader.open();// Abre o media uploader
   });
 
+  // Quando enviar foto
   mediauploader.on('select', function(){
     var anexo = mediauploader.state().get('selection').first().toJSON();
     jQuery('#receitas_img_preview').attr('src', anexo.url);

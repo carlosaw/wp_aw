@@ -4,10 +4,10 @@ function settings_api() {
   register_setting('ar_opts_group', 'ar_receita_opts');
 
   add_settings_section(
-    'receita_settings',
-    'Config das Receitas',
-    'ar_settings_section',
-    'ar_opts_section'
+    'receita_settings',// Identificador
+    'Config das Receitas',// Título da section
+    'ar_settings_section',// Função que vai ser rodada
+    'ar_opts_section'// pg responsavel pela section
   );
 
   add_settings_field(

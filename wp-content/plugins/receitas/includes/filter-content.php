@@ -13,7 +13,14 @@ function ar_filter_receita_content( $content ) {
   $receita_html = wp_remote_retrieve_body( $receita_html );
 
   //$receita_html = file_get_contents('receita-template.php', true);
-  
+
+  $origem = wp_get_post_terms( $post->ID, 'origem' );
+  $t_url = '';
+  if(isset($origem[0])) {
+    $t_url = get_term_meta( $origem[0]->term_id, 'url', true );
+  }
+
+ 
   $receita_data = get_post_meta($post->ID, 'receita_data', true);
 
   switch($receita_data['dificuldade']) {
@@ -43,6 +50,13 @@ function ar_filter_receita_content( $content ) {
   $receita_html = str_replace('RECEITA_ID_PH', $post->ID, $receita_html);
   $receita_html = str_replace('NOTA_PH', number_format($receita_data['media'], 1), $receita_html);
   $receita_html = str_replace('QT_PH', $receita_data['contagem'], $receita_html);
+
+  if(isset($origem[0])) {
+    $link = '<a href="'.$t_url.'" target="_blank">'.$origem[0]->name.'</a>';
+    $receita_html = str_replace('ORIGEM_PH', $link, $receita_html);
+  } else {
+    $receita_html = str_replace('ORIGEM_PH', 'Nenhuma', $receita_html);
+  }
 
   return $receita_html.$content;
 }
